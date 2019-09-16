@@ -2,6 +2,7 @@
 $(function() {
 
   var search_list = $("#user-search-result");
+  var member_list = $("#member_search_result");
   
 
 function appendUsers(user) {
@@ -20,9 +21,19 @@ function appendErrMsgToHTML(msg){
               search_list.append(html);
 }
 
+function appendMember(name,user_id) {
+  var html =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+             <input name='group[user_ids][]' type='hidden' value=${ user_id }>
+             <p class='chat-group-user__name'>${ name }</p>
+             <p class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+             </div>`
+             member_list.append(html);
+             return html;
+} 
+
+
   $(".chat-group-user__input").on("keyup", function() {
     var input = $(".chat-group-user__input").val();
-    console.log(input)
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -46,4 +57,15 @@ function appendErrMsgToHTML(msg){
       alert('ユーザー検索に失敗しました')
     })
   });
+  $("#user-search-result").on("click",".user-search-add",function(){
+    var name = $(this).data("user-name");
+    var user_id = $(this).data("user-id");
+    $(this).parent().remove();
+    appendMember(name, user_id);
+  });
+  $(document).on("click", '.user-search-remove', function() {
+    $(this).parent().remove();
+    
+  });
 });
+
