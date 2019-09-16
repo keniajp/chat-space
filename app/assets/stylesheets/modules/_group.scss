@@ -84,7 +84,30 @@ li {
   padding: 0 15px;
   line-height: 50px;
   font-size: 14px;
-  border-bottom: 1px solid #ddd;
+  
+  
+  &--left {
+    float: left;
+    width: 30%;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    
+  }
+  &--right {
+    float: right;
+    width: 66.5%;
+    border-bottom: 1px solid #ddd;
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    &__name {
+      float: left;
+    }
+  }
+  
+  
   &:after {
     content: "";
     clear: both;
@@ -104,4 +127,8 @@ li {
       color: #f05050;
     }
   }
+}
+#member_search_result {
+  width:70%;
+  float: right;
 }
