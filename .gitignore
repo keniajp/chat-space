@@ -17,3 +17,5 @@
 .byebug_history
 #画像が保管されるファイルはコミットしたくない 
 public/uploads/*
+# アクセスキーは公開したくない
+config/secrets.yml
