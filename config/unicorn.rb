@@ -14,10 +14,10 @@ pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
 
 #エラーのログを記録するファイルを指定
-stderr_path "#{app_path}/shared/shared/log/unicorn.stderr.log"
+stderr_path "#{app_path}/shared/log/unicorn.stderr.log"
 
 #通常のログを記録するファイルを指定
-stdout_path "#{app_path}/log/unicorn.stdout.log"
+stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
