@@ -72,21 +72,23 @@
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
-    padding: 20px 50px 20px 40px;
+    padding: 20px 40px;
     &__message {
+      box-sizing: border-box;
+      padding: 0 10px;
       border: none;
       float: left;
       height: 50px;
       width: calc(100% - 150px);
     }
     &__mask {
-      background-color: $white;
+      background-color:$white;
       float: left;
       height: 50px;
-      padding-right: 10px;
       &__image {
         font-size: 20px;
         line-height: 50px;
+        cursor: pointer;
       }
       .hidden {
         display: none;
@@ -101,6 +103,8 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+      width:100px;
+      cursor: pointer;
     }
   }
 }
